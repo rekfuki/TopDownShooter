@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/Combat/sprBullet_strip4.png" type="Texture" id=1]
+[ext_resource path="res://combat/shotgun/simple_bullet.gd" type="Script" id=2]
+
+[sub_resource type="Shader" id=1]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[node name="shotgun_bullet" type="KinematicBody2D"]
+collision_layer = 2
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 32.6922, 1.57343 )
+polygon = PoolVector2Array( 24.6016, -2.20805, 32.7182, -2.20805, 32.7182, 2.25605, 24.3311, 2.25605 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 2 )
+scale = Vector2( 1, 1.0141 )
+texture = ExtResource( 1 )
+centered = false
